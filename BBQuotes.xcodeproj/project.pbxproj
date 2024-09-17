@@ -14,6 +14,7 @@
 		924DDD1D2C99FE450076B758 /* BBQuotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924DDD1C2C99FE450076B758 /* BBQuotesTests.swift */; };
 		924DDD272C99FE450076B758 /* BBQuotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924DDD262C99FE450076B758 /* BBQuotesUITests.swift */; };
 		924DDD292C99FE450076B758 /* BBQuotesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924DDD282C99FE450076B758 /* BBQuotesUITestsLaunchTests.swift */; };
+		924DDD362C9A08410076B758 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924DDD352C9A08410076B758 /* QuoteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		924DDD222C99FE450076B758 /* BBQuotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBQuotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		924DDD262C99FE450076B758 /* BBQuotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBQuotesUITests.swift; sourceTree = "<group>"; };
 		924DDD282C99FE450076B758 /* BBQuotesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBQuotesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		924DDD352C9A08410076B758 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				924DDD0D2C99FE440076B758 /* ContentView.swift */,
 				924DDD0F2C99FE450076B758 /* Assets.xcassets */,
 				924DDD112C99FE450076B758 /* Preview Content */,
+				924DDD352C9A08410076B758 /* QuoteView.swift */,
 			);
 			path = BBQuotes;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				924DDD0E2C99FE440076B758 /* ContentView.swift in Sources */,
+				924DDD362C9A08410076B758 /* QuoteView.swift in Sources */,
 				924DDD0C2C99FE440076B758 /* BBQuotesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
