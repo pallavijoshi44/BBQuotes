@@ -7,25 +7,26 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     var body: some View {
         TabView {
-            QuoteView(show: "Breaking Bad", quoteType: QuoteType.breakingbad)
+            QuoteView(show: Constants.bbName, quoteType: QuoteType.breakingbad)
                 .toolbarBackground(.visible, for: .tabBar)
                 .tabItem {
-                    Label("Breaking Bad", systemImage: "tortoise")
+                    Label(Constants.bbName, systemImage: "tortoise")
                 }
             
-            QuoteView(show:"Better Call Saul", quoteType: QuoteType.bettercallsaul)
+            QuoteView(show:Constants.betterCallSaul, quoteType: QuoteType.bettercallsaul)
                 .toolbarBackground(.visible, for: .tabBar)
                 .tabItem {
-                    Label("Better Call Saul", systemImage: "briefcase")
+                    Label(Constants.betterCallSaul, systemImage: "briefcase")
                 }
             
-            QuoteView(show:"El Camino", quoteType: QuoteType.elcamino)
+            QuoteView(show:Constants.elCamino, quoteType: QuoteType.elcamino)
                 .toolbarBackground(.visible, for: .tabBar)
                 .tabItem {
-                    Label("El Camino", systemImage: "car")
+                    Label(Constants.elCamino, systemImage: "car")
                 }
         }
 }

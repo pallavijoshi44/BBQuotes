@@ -16,12 +16,11 @@ struct QuoteView: View {
     @State var showCharacterInfo: Bool = false
     
     var body: some View {
-        let showWithoutSpace: String =  show.replacingOccurrences(of: " ", with:"")
       
         GeometryReader { geo in
             ZStack
             {
-                Image(showWithoutSpace.lowercased())
+                Image(show.removeSpaceAndCase())
                     .resizable()
                     .scaledToFill()
                     .frame(width: geo.size.width * 2.7, height: geo.size.height * 1.2)
@@ -83,9 +82,9 @@ struct QuoteView: View {
                                 .font(.title)
                                 .foregroundStyle(.white)
                                 .padding()
-                                .background(Color("\(showWithoutSpace)Button"))
+                                .background(Color("\(show.removeSpaces())Button"))
                                 .clipShape(.rect(cornerRadius: 7))
-                                .shadow(color: Color("\(showWithoutSpace)Shadow"), radius:2)
+                                .shadow(color: Color("\(show.removeSpaces())Shadow"), radius:2)
                         })
                     
                     Spacer(minLength: 95)

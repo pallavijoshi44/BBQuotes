@@ -20,6 +20,8 @@
 		924DDD3D2C9A0D830076B758 /* samplecharacter.json in Resources */ = {isa = PBXBuildFile; fileRef = 924DDD3C2C9A0D830076B758 /* samplecharacter.json */; };
 		924DDD3F2C9A0D8A0076B758 /* BaseURL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 924DDD3E2C9A0D8A0076B758 /* BaseURL.txt */; };
 		926738192CA9AF1100F38E1D /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926738182CA9AF1100F38E1D /* CharacterView.swift */; };
+		9267381B2CA9E5A800F38E1D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9267381A2CA9E5A800F38E1D /* StringExtension.swift */; };
+		9267381D2CA9E71900F38E1D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9267381C2CA9E71900F38E1D /* Constants.swift */; };
 		928FB7222CA1730E00D00514 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928FB7212CA1730E00D00514 /* ViewModel.swift */; };
 		928FB7242CA1734900D00514 /* FetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928FB7232CA1734900D00514 /* FetchService.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +60,8 @@
 		924DDD3C2C9A0D830076B758 /* samplecharacter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = samplecharacter.json; path = ../../../../Downloads/BB17V1Resources/samplecharacter.json; sourceTree = "<group>"; };
 		924DDD3E2C9A0D8A0076B758 /* BaseURL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BaseURL.txt; path = ../../../../Downloads/BB17V1Resources/BaseURL.txt; sourceTree = "<group>"; };
 		926738182CA9AF1100F38E1D /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
+		9267381A2CA9E5A800F38E1D /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		9267381C2CA9E71900F38E1D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		928FB7212CA1730E00D00514 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		928FB7232CA1734900D00514 /* FetchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +121,8 @@
 				924DDD352C9A08410076B758 /* QuoteView.swift */,
 				926738182CA9AF1100F38E1D /* CharacterView.swift */,
 				924DDD0D2C99FE440076B758 /* ContentView.swift */,
+				9267381A2CA9E5A800F38E1D /* StringExtension.swift */,
+				9267381C2CA9E71900F38E1D /* Constants.swift */,
 				924DDD0F2C99FE450076B758 /* Assets.xcassets */,
 				924DDD112C99FE450076B758 /* Preview Content */,
 			);
@@ -293,12 +299,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9267381B2CA9E5A800F38E1D /* StringExtension.swift in Sources */,
 				926738192CA9AF1100F38E1D /* CharacterView.swift in Sources */,
 				928FB7242CA1734900D00514 /* FetchService.swift in Sources */,
 				924DDD0E2C99FE440076B758 /* ContentView.swift in Sources */,
 				924DDD362C9A08410076B758 /* QuoteView.swift in Sources */,
 				924DDD0C2C99FE440076B758 /* BBQuotesApp.swift in Sources */,
 				928FB7222CA1730E00D00514 /* ViewModel.swift in Sources */,
+				9267381D2CA9E71900F38E1D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
