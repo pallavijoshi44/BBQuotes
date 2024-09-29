@@ -69,9 +69,14 @@ struct CharacterView: View {
                             Text("None") .font(.subheadline)
                         }
                         
-                        
+                        DisclosureGroup("Status (Spoiler Alert!)") {
+                            VStack(alignment: .leading) {
+                                Text(character.status).font(.title2)
+                            }.frame(width: .infinity, alignment: .leading)
+                        }.tint(.primary)
                     }
                     .frame(width: geo.size.width/1.25)
+                    .padding(.bottom, 50)
                 }
             }
             
