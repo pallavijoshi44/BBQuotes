@@ -7,16 +7,17 @@
 
 import Foundation
 
-class ViewModel {
+@Observable
+class ViewModel  {
     enum FetchStatus {
         case notStarted
         case fetching
         case success
-        case error
+        case error(error: Error)
     }
     
-    private (set) var status = FetchStatus.notStarted
     
+    private(set) var status: FetchStatus = .notStarted
     private let service = QuotesService()
     
     var quote : Quote
@@ -26,15 +27,15 @@ class ViewModel {
 
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        getData(for: "Breaking+Bad")
+    
         let quoteData = try! Data(contentsOf: Bundle.main.url(forResource: "samplequote", withExtension: "json")!)
-       // quote = try! decoder.decode(Quote.self, from: quoteData)
+        quote = try! decoder.decode(Quote.self, from: quoteData)
         
         let characterData = try! Data(contentsOf: Bundle.main.url(forResource: "samplecharacter", withExtension: "json")!)
-       // character = try! decoder.decode(Character.self, from: characterData)
+        character = try! decoder.decode(Character.self, from: characterData)
         
         let deathData = try! Data(contentsOf: Bundle.main.url(forResource: "sampledeath", withExtension: "json")!)
-       // character.death = try! decoder.decode(Death.self, from: deathData)
+        character.death = try! decoder.decode(Death.self, from: deathData)
     }
     
     func getData (for show: String) async {
@@ -45,7 +46,7 @@ class ViewModel {
             character.death = try await service.fetchDeath(for: character.name)
             status = .success
         } catch  {
-            status = .error
+            status = .error(error: error)
         }
     }
 }
