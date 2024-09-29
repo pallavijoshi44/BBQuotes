@@ -15,6 +15,12 @@
 		924DDD272C99FE450076B758 /* BBQuotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924DDD262C99FE450076B758 /* BBQuotesUITests.swift */; };
 		924DDD292C99FE450076B758 /* BBQuotesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924DDD282C99FE450076B758 /* BBQuotesUITestsLaunchTests.swift */; };
 		924DDD362C9A08410076B758 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924DDD352C9A08410076B758 /* QuoteView.swift */; };
+		924DDD392C9A0D740076B758 /* samplequote.json in Resources */ = {isa = PBXBuildFile; fileRef = 924DDD382C9A0D740076B758 /* samplequote.json */; };
+		924DDD3B2C9A0D7B0076B758 /* sampledeath.json in Resources */ = {isa = PBXBuildFile; fileRef = 924DDD3A2C9A0D7B0076B758 /* sampledeath.json */; };
+		924DDD3D2C9A0D830076B758 /* samplecharacter.json in Resources */ = {isa = PBXBuildFile; fileRef = 924DDD3C2C9A0D830076B758 /* samplecharacter.json */; };
+		924DDD3F2C9A0D8A0076B758 /* BaseURL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 924DDD3E2C9A0D8A0076B758 /* BaseURL.txt */; };
+		928FB7222CA1730E00D00514 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928FB7212CA1730E00D00514 /* ViewModel.swift */; };
+		928FB7242CA1734900D00514 /* FetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928FB7232CA1734900D00514 /* FetchService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +52,12 @@
 		924DDD262C99FE450076B758 /* BBQuotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBQuotesUITests.swift; sourceTree = "<group>"; };
 		924DDD282C99FE450076B758 /* BBQuotesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBQuotesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		924DDD352C9A08410076B758 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
+		924DDD382C9A0D740076B758 /* samplequote.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = samplequote.json; path = ../../../../Downloads/BB17V1Resources/samplequote.json; sourceTree = "<group>"; };
+		924DDD3A2C9A0D7B0076B758 /* sampledeath.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = sampledeath.json; path = ../../../../Downloads/BB17V1Resources/sampledeath.json; sourceTree = "<group>"; };
+		924DDD3C2C9A0D830076B758 /* samplecharacter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = samplecharacter.json; path = ../../../../Downloads/BB17V1Resources/samplecharacter.json; sourceTree = "<group>"; };
+		924DDD3E2C9A0D8A0076B758 /* BaseURL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BaseURL.txt; path = ../../../../Downloads/BB17V1Resources/BaseURL.txt; sourceTree = "<group>"; };
+		928FB7212CA1730E00D00514 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		928FB7232CA1734900D00514 /* FetchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,11 +108,14 @@
 		924DDD0A2C99FE440076B758 /* BBQuotes */ = {
 			isa = PBXGroup;
 			children = (
+				924DDD372C9A0D450076B758 /* SampleData */,
 				924DDD0B2C99FE440076B758 /* BBQuotesApp.swift */,
+				928FB7212CA1730E00D00514 /* ViewModel.swift */,
+				928FB7232CA1734900D00514 /* FetchService.swift */,
+				924DDD352C9A08410076B758 /* QuoteView.swift */,
 				924DDD0D2C99FE440076B758 /* ContentView.swift */,
 				924DDD0F2C99FE450076B758 /* Assets.xcassets */,
 				924DDD112C99FE450076B758 /* Preview Content */,
-				924DDD352C9A08410076B758 /* QuoteView.swift */,
 			);
 			path = BBQuotes;
 			sourceTree = "<group>";
@@ -128,6 +143,17 @@
 				924DDD282C99FE450076B758 /* BBQuotesUITestsLaunchTests.swift */,
 			);
 			path = BBQuotesUITests;
+			sourceTree = "<group>";
+		};
+		924DDD372C9A0D450076B758 /* SampleData */ = {
+			isa = PBXGroup;
+			children = (
+				924DDD3E2C9A0D8A0076B758 /* BaseURL.txt */,
+				924DDD3C2C9A0D830076B758 /* samplecharacter.json */,
+				924DDD3A2C9A0D7B0076B758 /* sampledeath.json */,
+				924DDD382C9A0D740076B758 /* samplequote.json */,
+			);
+			path = SampleData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +260,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				924DDD3B2C9A0D7B0076B758 /* sampledeath.json in Resources */,
 				924DDD132C99FE450076B758 /* Preview Assets.xcassets in Resources */,
+				924DDD3D2C9A0D830076B758 /* samplecharacter.json in Resources */,
+				924DDD3F2C9A0D8A0076B758 /* BaseURL.txt in Resources */,
+				924DDD392C9A0D740076B758 /* samplequote.json in Resources */,
 				924DDD102C99FE450076B758 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,9 +290,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				928FB7242CA1734900D00514 /* FetchService.swift in Sources */,
 				924DDD0E2C99FE440076B758 /* ContentView.swift in Sources */,
 				924DDD362C9A08410076B758 /* QuoteView.swift in Sources */,
 				924DDD0C2C99FE440076B758 /* BBQuotesApp.swift in Sources */,
+				928FB7222CA1730E00D00514 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
