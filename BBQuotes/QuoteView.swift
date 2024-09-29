@@ -12,12 +12,16 @@ let vm = ViewModel()
 struct QuoteView: View {
     let show: String
     let quoteType: QuoteType
+
     @State var showCharacterInfo: Bool = false
     
     var body: some View {
+        let showWithoutSpace: String =  show.replacingOccurrences(of: " ", with:"")
+      
         GeometryReader { geo in
-            ZStack {
-                Image(show.lowercased().replacingOccurrences(of: " ", with:""))
+            ZStack
+            {
+                Image(showWithoutSpace.lowercased())
                     .resizable()
                     .scaledToFill()
                     .frame(width: geo.size.width * 2.7, height: geo.size.height * 1.2)
@@ -79,9 +83,9 @@ struct QuoteView: View {
                                 .font(.title)
                                 .foregroundStyle(.white)
                                 .padding()
-                                .background(.breakingBadGreen)
+                                .background(Color("\(showWithoutSpace)Button"))
                                 .clipShape(.rect(cornerRadius: 7))
-                                .shadow(color: .breakingBadYellow, radius: 2)
+                                .shadow(color: Color("\(showWithoutSpace)Shadow"), radius:2)
                         })
                     
                     Spacer(minLength: 95)
@@ -104,11 +108,13 @@ struct QuoteView: View {
 enum QuoteType {
     case breakingbad
     case bettercallsaul
+    case elcamino
     
     var image: String {
         switch(self) {
         case .breakingbad: "breakingbad"
         case .bettercallsaul: "bettercallsaul"
+        case .elcamino: "elcamino"
         }
     }
 }

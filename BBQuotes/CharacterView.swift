@@ -19,13 +19,18 @@ struct CharacterView: View {
                     .scaledToFit()
                 
                 ScrollView {
-                    AsyncImage(url: character.images[0]) { image in
-                        image
-                            .resizable()
-                            .scaledToFill()
-                    } placeholder: {
-                        ProgressView()
+                    TabView {
+                        ForEach(character.images, id: \.self) { characterImg in
+                            AsyncImage(url: characterImg) { image in
+                                image
+                                    .resizable()
+                                    .scaledToFill()
+                            } placeholder: {
+                                ProgressView()
+                            }
+                        }
                     }
+                    .tabViewStyle(.page)
                     .frame(width: geo.size.width/1.2, height: geo.size.height/1.7)
                     .clipShape(.rect(cornerRadius: 50))
                     .padding(.top, 60)
@@ -72,8 +77,26 @@ struct CharacterView: View {
                         DisclosureGroup("Status (Spoiler Alert!)") {
                             VStack(alignment: .leading) {
                                 Text(character.status).font(.title2)
+                                
+                                if let death = character.death {
+                                    AsyncImage(url: death.image) { image in
+                                        image
+                                            .resizable()
+                                            .scaledToFit()
+                                            .clipShape(.rect(cornerRadius: 15))
+                                    } placeholder: {
+                                        ProgressView()
+                                    }
+                                    
+                                    Text("How: \(death.details):").padding(.bottom, 7)
+                                    Text("Last words: \(death.lastWords)")
+
+                                    
+                                }
+                                
                             }.frame(width: .infinity, alignment: .leading)
                         }.tint(.primary)
+                        
                     }
                     .frame(width: geo.size.width/1.25)
                     .padding(.bottom, 50)
