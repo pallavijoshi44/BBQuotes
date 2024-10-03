@@ -69,6 +69,23 @@ class QuotesService {
         
         return nil
     }
+    
+    func fetchEpisode(from show: String) async throws -> Episode?  {
+        let episodeUrl = baseUrl.appending(path: "episodes")
+        let fetchURL = episodeUrl.appending(queryItems: [URLQueryItem(name: "production", value: show)])
+
+        let (data, response) = try await URLSession.shared.data(for: URLRequest(url: fetchURL))
+        
+        guard let response = response as? HTTPURLResponse?, response?.statusCode == 200  else {
+            throw FetchError.badResponse
+        }
+        
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        let episodes =  try decoder.decode([Episode].self, from: data)
+        return episodes.randomElement()
+    }
 }
 
 struct Quote: Decodable {
@@ -137,4 +154,28 @@ struct Death: Decodable {
     let lastWords: String
     let episode: Int
     let production: String
+}
+
+struct Episode : Decodable {
+    let episodeId : Int
+    let production: String
+    let episode: Int
+    let title: String
+    let image: URL
+    let synopsis: String
+    let writtenBy: String
+    let directedBy: String
+    let airDate: String
+    let characters: [String]
+
+    
+    var seasonEpisode: String  {
+        var episodeString = String(episode) //101
+        let season = episodeString.removeFirst() //01
+        
+        if episodeString.first != "0" {
+            episodeString = String(episodeString.removeLast()) //1
+        }
+        return "Season: \(season) Episode: \(episodeString)"
+    }
 }
